@@ -1,12 +1,14 @@
 #include<stdio.h>
 #include<limits.h>
-/*
+/* Example input
+adjacency matrix
 0 1 1 0 0
 1 0 1 1 0
 1 1 0 1 1
 0 1 1 0 1
 0 0 1 1 0
 
+cost matrix
 0   4  2  -1  -1
 4   0  1   5  -1
 2   1  0   8  10
@@ -64,9 +66,9 @@ void find(int currentNode){
       if(cost[i]<nextNodeCost && !isAlreadyInPath(i)){
          nextNode = i;
          nextNodeCost = cost[i];
-         totalCost += nextNodeCost;
       }
    }
+   totalCost += nextNodeCost;
    path[pathIndex] = nextNode;
    pathIndex++;
    //printf("nextNode : %d\n",nextNode);
